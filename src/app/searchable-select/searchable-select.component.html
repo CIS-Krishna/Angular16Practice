@@ -1,0 +1,26 @@
+<mat-form-field appearance="fill" class="custom-select">
+    <mat-label>{{ label }}</mat-label>
+    <mat-select [(value)]="selectedValue" #select="matSelect" panelClass="custom-select-panel" (selectionChange)="setValue($event.value)">
+      <mat-select-trigger>
+        {{ selectedValue ? getDisplayValueBySearchValue(selectedValue) : placeholder }}
+      </mat-select-trigger>
+  
+      <!-- Search box inside mat-option -->
+      <mat-option>
+        <input type="text"
+               [(ngModel)]="searchTerm"
+               placeholder="Search..."
+               class="search-input"
+               (click)="$event.stopPropagation()"
+               (keydown)="handleKeydown($event)" />
+      </mat-option>
+  
+      <!-- Filtered options dynamically displaying and binding the values -->
+      <mat-option *ngFor="let option of filteredOptions()" [value]="getOptionValue(option)">
+        {{ getDisplayValue(option) }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  

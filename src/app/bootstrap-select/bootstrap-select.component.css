@@ -1,0 +1,22 @@
+.bootstrap-select .dropdown-toggle {
+    height: 40px;
+    border: 1px solid #097ff4;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    color: #eaedf0;
+  }
+  
+
+  .bootstrap-select .dropdown-menu {
+    width: 100%;
+  }
+  
+  .bootstrap-select .dropdown-toggle {
+    height: auto;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  }
+  
+  .bootstrap-select .form-control {
+    height: calc(1.5em + 0.75rem + 2px);
+  }
+  

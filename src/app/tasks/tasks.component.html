@@ -1,0 +1,38 @@
+<section id="tasks">
+  <form action="" [formGroup]="form">
+    <app-searchable-select
+      [options]="anotherOptionSet"
+      [displayField]="'label'"
+      [valueField]="'value'"
+      label="Select an Item"
+      placeholder="Choose an item"
+      formControlName="selectedOption"
+    >
+    </app-searchable-select>
+    
+    <button (click)="expression()">Submit</button>
+  </form>
+
+  <header>
+    <H1> {{ selectedUser.name }}'s tasks </H1>
+    <img
+      [src]="'assets/users/' + selectedUser.avatar"
+      alt=""
+      width="100px"
+      height="100px"
+    />
+
+    <menu>
+      <button>Add Task</button>
+    </menu>
+  </header>
+
+  <ul>
+    @for(task of tasks; track task.id){
+
+    <li>
+      <app-task [task]="task" (completed)="onCompletedTask($event)" />
+    </li>
+    }
+  </ul>
+</section>
